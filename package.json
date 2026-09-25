@@ -1,0 +1,15 @@
+{
+	"name": "task3_interop",
+	"version": "1.0.0",
+	"description": "",
+	"main": "k6-benchmark.js",
+	"dependencies": {},
+	"devDependencies": {},
+	"scripts": {
+		"prebenchmark": "mkdir -p results/k6 && k6 run --quiet -e MODE=warmup k6-benchmark.js",
+		"benchmark": "K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_PORT=-1 K6_WEB_DASHBOARD_PERIOD=1s K6_WEB_DASHBOARD_EXPORT=results/k6/report.html k6 run --quiet --out json=results/k6/metrics.jsonl k6-benchmark.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
+}
